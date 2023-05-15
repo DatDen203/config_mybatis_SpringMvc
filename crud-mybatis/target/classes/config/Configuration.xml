@@ -18,7 +18,7 @@
         </environment>
     </environments>
 			
-    <mappers>
+    <!-- <mappers>
         <mapper resource="com/example/Dao/StudentMapper.xml"/>	
-    </mappers>
+    </mappers> -->
 </configuration>

@@ -50,11 +50,21 @@
 	</bean>
 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<qualifier value="defaultDS"/>
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation"
-			value="classpath:WEB-INF/Configuration.xml" />
+			value="classpath:config/Configuration.xml" />
 		<property name="mapperLocations"
 			value="classpath:com/example/Dao/*.xml" />
 	</bean>
 
+	<bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+	
+	<bean id="scanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.example"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
 </beans>

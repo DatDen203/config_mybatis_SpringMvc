@@ -2,12 +2,12 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.Dao.StudentMapper">
-	<select id="GetListStudent" resultType="Student" resultMap="result">
+<mapper namespace="StudentMapper">
+	<select id="GetListStudent" resultType="Student" resultMap="resultList">
 		SELECT * FROM Student
 	</select>
 
-	<resultMap type="com.example.Model.StudentDto" id="result">
+	<resultMap type="Student" id="resultList">
 		<id property="idStudent" column="idStudent" />
 		<result property="name" column="name" />
 		<result property="age" column="age" />

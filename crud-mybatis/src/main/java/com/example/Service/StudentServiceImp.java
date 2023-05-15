@@ -13,10 +13,10 @@ public class StudentServiceImp implements IStudentService{
 
 	@Autowired
 	StudentDaoImpl dao;
-	
-	@Autowired
+
 	public List<StudentDto> GetListStudent() {
 		return dao.GetListStudent();
 	}
+	
 
 }
